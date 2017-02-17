@@ -32,6 +32,13 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar current-user
       (getenv
        (if (equal system-type 'windows-nt) "USERNAME" "USER")))
@@ -131,5 +138,17 @@ by Prelude.")
 (prelude-eval-after-init
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
+
+;; Change the prelude-day
+(setq prelude-theme 'solarized-dark)
+
+;; Get the character position
+(setq column-number-mode t)
+
+;; Column marker for programming language
+(require 'column-marker)
+(add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-1 79)))
+(add-hook 'prog-mode-hook 'column-enforce-mode)
+(setq column-enforce-column 79)
 
 ;;; init.el ends here
