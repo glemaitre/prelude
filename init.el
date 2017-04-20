@@ -151,5 +151,6 @@ by Prelude.")
 (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-1 79)))
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 (setq column-enforce-column 79)
+(setq-default fill-column 79)
 
 ;;; init.el ends here
