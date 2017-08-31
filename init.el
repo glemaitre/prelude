@@ -154,6 +154,10 @@ by Prelude.")
 (setq-default fill-column 79)
 (setq-default default-fill-column 79)
 
+;; Show indentation
+(require 'highlight-indentation)
+(add-hook 'prog-mode-hook 'highlight-indentation-mode)
+
 ;; matlab-mode configuration
 (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
 (add-to-list
