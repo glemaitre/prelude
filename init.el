@@ -152,5 +152,14 @@ by Prelude.")
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 (setq column-enforce-column 79)
 (setq-default fill-column 79)
+(setq-default default-fill-column 79)
+
+;; matlab-mode configuration
+(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
+(add-to-list
+ 'auto-mode-alist
+ '("\\.m$" . matlab-mode))
+(setq matlab-indent-function t)
+(setq matlab-shell-command "matlab")
 
 ;;; init.el ends here
